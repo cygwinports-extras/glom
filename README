@@ -1,0 +1,128 @@
+glom
+------------------------------------------
+With Glom you can design database systems - the database and the user
+interface.
+
+The design is loosely based on FileMaker Pro, with the added advantage
+of separation between interface and data. Its simple framework should be
+enough to implement most database applications. Without Glom these
+systems normally consist of lots of repetitive, unmaintainable code.
+
+Glom uses the PostgreSQL database backend but it can not edit databases
+that it did not create, because it uses only a simple subset of Postgres
+functionality. 
+
+Runtime requirements:
+  cygwin-1.5.19-4
+  bakery24-2.4.0-1
+  libgda2-1.2.3-1
+  libgda2-provider-sqlite-1.2.3-1
+  libgdamm20-1.3.7-1
+  libgnome2-2.14.1-1
+  libgnomecanvasmm26-2.14.0-1
+  pygda-2.12.1-1
+  pygtk2-2.8.6-1
+  python-2.4.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.19-4
+  autoconf2.5-2.59-3
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  cygport-0.1.90-1
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  gtk-doc-1.5-1
+  intltool-0.34.2-1
+  libtool1.5-1.5.20-2
+  make-3.80-1
+  pkg-config-0.20-1
+  sed-4.1.4-1
+
+Canonical website:
+  http://www.glom.org/
+
+Canonical download:
+  ftp://ftp.gnome.org/pub/gnome/sources/glom/
+
+-------------------------------------------
+
+Build instructions:
+  unpack glom-1.0.3-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./glom-1.0.3-X.cygport all
+
+This will create:
+  /usr/src/glom-1.0.3-X-src.tar.bz2
+  /usr/src/glom-1.0.3-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/postinstall/glom.sh
+  /usr/bin/cygglom-0.dll
+  /usr/bin/glom.exe
+  /usr/lib/libglom.dll.a
+  /usr/lib/libglom.la
+  /usr/lib/python2.4/site-packages/glom.dll
+  /usr/lib/python2.4/site-packages/glom.la
+  /usr/share/applications/glom.desktop
+  /usr/share/doc/Cygwin/glom-1.0.3.README
+  /usr/share/doc/glom-1.0.3/AUTHORS
+  /usr/share/doc/glom-1.0.3/COPYING
+  /usr/share/doc/glom-1.0.3/ChangeLog
+  /usr/share/doc/glom-1.0.3/INSTALL
+  /usr/share/doc/glom-1.0.3/NEWS
+  /usr/share/doc/glom-1.0.3/README
+  /usr/share/doc/glom-1.0.3/TODO
+  /usr/share/glom/doc/examples/example_smallbusiness.glom
+  /usr/share/glom/glade/glom.glade
+  /usr/share/glom/glom_document.dtd
+  /usr/share/glom/xslt/print_details_to_html.xsl
+  /usr/share/glom/xslt/print_report_to_html.xsl
+  /usr/share/gnome/help/glom/C/figures/start.png
+  /usr/share/gnome/help/glom/C/glom.xml
+  /usr/share/gnome/help/glom/C/legal.xml
+  /usr/share/gnome/help/glom/de/figures/start.png
+  /usr/share/gnome/help/glom/de/glom.xml
+  /usr/share/icons/hicolor/48x48/apps/glom.png
+  /usr/share/locale/ca/LC_MESSAGES/glom.mo
+  /usr/share/locale/cs/LC_MESSAGES/glom.mo
+  /usr/share/locale/de/LC_MESSAGES/glom.mo
+  /usr/share/locale/en_CA/LC_MESSAGES/glom.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/glom.mo
+  /usr/share/locale/es/LC_MESSAGES/glom.mo
+  /usr/share/locale/fi/LC_MESSAGES/glom.mo
+  /usr/share/locale/fr/LC_MESSAGES/glom.mo
+  /usr/share/locale/gu/LC_MESSAGES/glom.mo
+  /usr/share/locale/it/LC_MESSAGES/glom.mo
+  /usr/share/locale/ne/LC_MESSAGES/glom.mo
+  /usr/share/locale/nl/LC_MESSAGES/glom.mo
+  /usr/share/locale/pa/LC_MESSAGES/glom.mo
+  /usr/share/locale/pt/LC_MESSAGES/glom.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/glom.mo
+  /usr/share/locale/rw/LC_MESSAGES/glom.mo
+  /usr/share/locale/sq/LC_MESSAGES/glom.mo
+  /usr/share/locale/sv/LC_MESSAGES/glom.mo
+  /usr/share/locale/tr/LC_MESSAGES/glom.mo
+  /usr/share/locale/vi/LC_MESSAGES/glom.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/glom.mo
+  /usr/share/mime-info/glom.keys
+  /usr/share/mime-info/glom.mime
+  /usr/share/mime/application/x-glom.xml
+  /usr/share/mime/packages/glom.xml
+
+------------------
+
+Port Notes:
+
+----- version 1.0.3-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

@@ -1,0 +1,14 @@
+category: Gnome Database
+requires: cygwin bakery24 libgda2 libgda2-provider-sqlite libgdamm20 libgnome2 libgnomecanvasmm26 pygda pygtk2 python
+sdesc: "GNOME database system designer"
+ldesc: "With Glom you can design database systems - the database and the user
+interface.
+
+The design is loosely based on FileMaker Pro, with the added advantage
+of separation between interface and data. Its simple framework should be
+enough to implement most database applications. Without Glom these
+systems normally consist of lots of repetitive, unmaintainable code.
+
+Glom uses the PostgreSQL database backend but it can not edit databases
+that it did not create, because it uses only a simple subset of Postgres
+functionality."
