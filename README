@@ -13,32 +13,46 @@ that it did not create, because it uses only a simple subset of Postgres
 functionality. 
 
 Runtime requirements:
-  cygwin-1.5.19-4
+  cygwin-1.5.23-2
   bakery24-2.4.0-1
-  libgda2-1.2.3-1
-  libgda2-provider-sqlite-1.2.3-1
+  gdk-pixbuf2-2.10.6-1
+  glib2-2.12.4-1
+  glibmm24-2.12.3-1
+  gnome-vfsmm26-2.16.1-1
+  gtk2-x11-2.10.6-1
+  gtkmm24-2.10.6-1
+  libgda2-1.2.3-2
+  libgda2-provider-postgres-1.2.3-2
   libgdamm20-1.3.7-1
-  libgnome2-2.14.1-1
-  libgnomecanvasmm26-2.14.0-1
-  pygda-2.12.1-1
-  pygtk2-2.8.6-1
-  python-2.4.1-1
+  libglademm24-2.6.2-1
+  libgnome2-2.16.0-1
+  libgnomecanvasmm26-2.16.0-1
+  libintl8-0.15-1
+  libsigc++20-2.0.17-1
+  libxml++26-2.14.0-1
+  libxml2-2.6.26-1
+  libxslt-1.1.17-1
+  pygda-2.14.0-1
+  pygtk2-2.10.3-1
+  python-2.4.3-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.19-4
-  autoconf2.5-2.59-3
-  automake1.9-1.9.6-1
-  binutils-20050610-1
-  cygport-0.1.90-1
-  gawk-3.1.5-2
+  cygwin-1.5.23-2
+  autoconf2.5-2.60-2
+  automake1.9-1.9.6-2
+  binutils-20060817-1
+  cygport-0.2.7-1
+  gawk-3.1.5-4
   gcc-core-3.4.4-1
-  gtk-doc-1.5-1
-  intltool-0.34.2-1
-  libtool1.5-1.5.20-2
-  make-3.80-1
-  pkg-config-0.20-1
-  sed-4.1.4-1
+  gnome-common-2.12.0-1
+  gnome-doc-utils-0.6.0-1
+  intltool-0.35.1-1
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  pkg-config-0.21-1
+  scrollkeeper-0.3.14-2
+  sed-4.1.5-2
 
 Canonical website:
   http://www.glom.org/
@@ -49,15 +63,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack glom-1.0.3-X-src.tar.bz2
+  unpack glom-1.2.2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./glom-1.0.3-X.cygport all
+  cygport ./glom-1.2.2-X.cygport all
 
 This will create:
-  /usr/src/glom-1.0.3-X-src.tar.bz2
-  /usr/src/glom-1.0.3-X.tar.bz2
+  /usr/src/glom-1.2.2-X-src.tar.bz2
+  /usr/src/glom-1.2.2-X.tar.bz2
 
 -------------------------------------------
 
@@ -71,25 +85,34 @@ Files included in the binary package:
   /usr/lib/python2.4/site-packages/glom.dll
   /usr/lib/python2.4/site-packages/glom.la
   /usr/share/applications/glom.desktop
-  /usr/share/doc/Cygwin/glom-1.0.3.README
-  /usr/share/doc/glom-1.0.3/AUTHORS
-  /usr/share/doc/glom-1.0.3/COPYING
-  /usr/share/doc/glom-1.0.3/ChangeLog
-  /usr/share/doc/glom-1.0.3/INSTALL
-  /usr/share/doc/glom-1.0.3/NEWS
-  /usr/share/doc/glom-1.0.3/README
-  /usr/share/doc/glom-1.0.3/TODO
+  /usr/share/doc/Cygwin/glom-1.2.2.README
+  /usr/share/doc/glom-1.2.2/AUTHORS
+  /usr/share/doc/glom-1.2.2/COPYING
+  /usr/share/doc/glom-1.2.2/ChangeLog
+  /usr/share/doc/glom-1.2.2/INSTALL
+  /usr/share/doc/glom-1.2.2/NEWS
+  /usr/share/doc/glom-1.2.2/README
+  /usr/share/doc/glom-1.2.2/TODO
+  /usr/share/glom/doc/examples/example_film_manager.glom
+  /usr/share/glom/doc/examples/example_music_collection.glom
+  /usr/share/glom/doc/examples/example_project_manager.glom
   /usr/share/glom/doc/examples/example_smallbusiness.glom
   /usr/share/glom/glade/glom.glade
   /usr/share/glom/glom_document.dtd
   /usr/share/glom/xslt/print_details_to_html.xsl
   /usr/share/glom/xslt/print_report_to_html.xsl
+  /usr/share/gnome/help/glom/C/figures/glom_design_fields.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_fields_dialog_calculated.png
   /usr/share/gnome/help/glom/C/figures/start.png
   /usr/share/gnome/help/glom/C/glom.xml
   /usr/share/gnome/help/glom/C/legal.xml
+  /usr/share/gnome/help/glom/de/figures/glom_design_fields.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_fields_dialog_calculated.png
   /usr/share/gnome/help/glom/de/figures/start.png
   /usr/share/gnome/help/glom/de/glom.xml
+  /usr/share/gnome/help/glom/de/legal.xml
   /usr/share/icons/hicolor/48x48/apps/glom.png
+  /usr/share/icons/hicolor/scalable/apps/glom.svg
   /usr/share/locale/ca/LC_MESSAGES/glom.mo
   /usr/share/locale/cs/LC_MESSAGES/glom.mo
   /usr/share/locale/de/LC_MESSAGES/glom.mo
@@ -99,7 +122,9 @@ Files included in the binary package:
   /usr/share/locale/fi/LC_MESSAGES/glom.mo
   /usr/share/locale/fr/LC_MESSAGES/glom.mo
   /usr/share/locale/gu/LC_MESSAGES/glom.mo
+  /usr/share/locale/hu/LC_MESSAGES/glom.mo
   /usr/share/locale/it/LC_MESSAGES/glom.mo
+  /usr/share/locale/nb/LC_MESSAGES/glom.mo
   /usr/share/locale/ne/LC_MESSAGES/glom.mo
   /usr/share/locale/nl/LC_MESSAGES/glom.mo
   /usr/share/locale/pa/LC_MESSAGES/glom.mo
@@ -115,12 +140,14 @@ Files included in the binary package:
   /usr/share/mime-info/glom.mime
   /usr/share/mime/application/x-glom.xml
   /usr/share/mime/packages/glom.xml
+  /usr/share/omf/glom/glom-C.omf
+  /usr/share/omf/glom/glom-de.omf
 
 ------------------
 
 Port Notes:
 
------ version 1.0.3-1 -----
+----- version 1.2.2-1 -----
 Initial release for Cygwin.
 
 
