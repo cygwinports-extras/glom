@@ -14,31 +14,27 @@ functionality.
 
 Runtime requirements:
   cygwin-1.5.24-2
-  bakery24-2.4.1-1
-  gdk-pixbuf2-2.10.12-1
-  glib2-2.12.12-1
-  glibmm24-2.12.9-1
-  gnome-vfsmm26-2.16.1-1
-  gtk2-x11-2.10.12-1
-  gtkmm24-2.10.9-1
-  libgda2-1.2.4-1
-  libgda2-provider-postgres-1.2.4-1
-  libgdamm20-1.3.7-1
-  libgettextpo0-0.15-1
-  libglademm24-2.6.2-1
-  libgnome2-2.16.0-1
-  libgnomecanvasmm26-2.16.0-1
-  libgtksourceviewmm10-0.3.0-1
+  bakery24-2.4.3-1
+  gdk-pixbuf2-2.12.2-1
+  glib2-2.14.4-1
+  glibmm24-2.14.2-1
+  gnome-vfsmm26-2.20.0-1
+  gtk2-x11-2.12.2-1
+  gtkmm24-2.12.3-1
+  libgda30-3.0.1-1
+  libgda30-provider-postgres-3.0.1-1
+  libgdamm30-2.9.81-1
+  libglademm24-2.6.5-1
+  libgnome2-2.20.1.1-1
   libintl8-0.15-1
-  libsigc++20-2.0.17-1
-  libxml++26-2.14.0-1
-  libxml2-2.6.28-1
-  libxslt-1.1.20-1
-  postgresql-8.0.7-1
-  python-2.5.1-1
-  python-gda-2.14.3-1
-  python-gobject2-2.12.3-2
-  python-gtk2-2.10.4-2
+  libsigc++20-2.1.1-1
+  libxml++26-2.20.0-1
+  libxml2-2.6.30-1
+  libxslt-1.1.22-1
+  python-2.5.1-3
+  python-gda-2.19.1-1
+  python-gobject2-2.14.0-1
+  python-gtk2-2.12.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -67,15 +63,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack glom-1.4.3-X-src.tar.bz2
+  unpack glom-1.6.5-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./glom-1.4.3-X.cygport all
+  cygport ./glom-1.6.5-X.cygport all
 
 This will create:
-  /usr/src/glom-1.4.3-X-src.tar.bz2
-  /usr/src/glom-1.4.3-X.tar.bz2
+  /usr/src/glom-1.6.5-X-src.tar.bz2
+  /usr/src/glom-1.6.5-X.tar.bz2
 
 -------------------------------------------
 
@@ -90,14 +86,13 @@ Files included in the binary package:
   /usr/lib/python2.5/site-packages/glom.dll
   /usr/lib/python2.5/site-packages/glom.la
   /usr/share/applications/glom.desktop
-  /usr/share/doc/Cygwin/glom-1.4.3.README
-  /usr/share/doc/glom-1.4.3/AUTHORS
-  /usr/share/doc/glom-1.4.3/COPYING
-  /usr/share/doc/glom-1.4.3/ChangeLog
-  /usr/share/doc/glom-1.4.3/INSTALL
-  /usr/share/doc/glom-1.4.3/NEWS
-  /usr/share/doc/glom-1.4.3/README
-  /usr/share/doc/glom-1.4.3/TODO
+  /usr/share/doc/glom-1.6.5/AUTHORS
+  /usr/share/doc/glom-1.6.5/COPYING
+  /usr/share/doc/glom-1.6.5/ChangeLog
+  /usr/share/doc/glom-1.6.5/INSTALL
+  /usr/share/doc/glom-1.6.5/NEWS
+  /usr/share/doc/glom-1.6.5/README
+  /usr/share/doc/glom-1.6.5/TODO
   /usr/share/glom/doc/examples/example_film_manager.glom
   /usr/share/glom/doc/examples/example_music_collection.glom
   /usr/share/glom/doc/examples/example_project_manager.glom
@@ -116,11 +111,25 @@ Files included in the binary package:
   /usr/share/gnome/help/glom/de/figures/start.png
   /usr/share/gnome/help/glom/de/glom.xml
   /usr/share/gnome/help/glom/de/legal.xml
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_fields.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/en_GB/figures/start.png
+  /usr/share/gnome/help/glom/en_GB/glom.xml
+  /usr/share/gnome/help/glom/en_GB/legal.xml
+  /usr/share/gnome/help/glom/es/figures/glom_design_fields.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/es/figures/start.png
+  /usr/share/gnome/help/glom/es/glom.xml
+  /usr/share/gnome/help/glom/es/legal.xml
   /usr/share/gnome/help/glom/sv/figures/glom_design_fields.png
   /usr/share/gnome/help/glom/sv/figures/glom_design_fields_dialog_calculated.png
   /usr/share/gnome/help/glom/sv/figures/start.png
   /usr/share/gnome/help/glom/sv/glom.xml
   /usr/share/gnome/help/glom/sv/legal.xml
+  /usr/share/icons/hicolor/16x16/apps/glom.png
+  /usr/share/icons/hicolor/22x22/apps/glom.png
+  /usr/share/icons/hicolor/24x24/apps/glom.png
+  /usr/share/icons/hicolor/32x32/apps/glom.png
   /usr/share/icons/hicolor/48x48/apps/glom.png
   /usr/share/icons/hicolor/scalable/apps/glom.svg
   /usr/share/locale/ar/LC_MESSAGES/glom.mo
@@ -133,6 +142,7 @@ Files included in the binary package:
   /usr/share/locale/es/LC_MESSAGES/glom.mo
   /usr/share/locale/fi/LC_MESSAGES/glom.mo
   /usr/share/locale/fr/LC_MESSAGES/glom.mo
+  /usr/share/locale/gl/LC_MESSAGES/glom.mo
   /usr/share/locale/gu/LC_MESSAGES/glom.mo
   /usr/share/locale/hu/LC_MESSAGES/glom.mo
   /usr/share/locale/it/LC_MESSAGES/glom.mo
@@ -153,11 +163,16 @@ Files included in the binary package:
   /usr/share/mime/packages/glom.xml
   /usr/share/omf/glom/glom-C.omf
   /usr/share/omf/glom/glom-de.omf
+  /usr/share/omf/glom/glom-en_GB.omf
+  /usr/share/omf/glom/glom-es.omf
   /usr/share/omf/glom/glom-sv.omf
 
 ------------------
 
 Port Notes:
+
+----- version 1.6.5-1 -----
+Version bump.
 
 ----- version 1.4.3-1 -----
 Version bump.
