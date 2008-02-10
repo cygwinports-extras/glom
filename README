@@ -64,15 +64,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack glom-1.6.7-X-src.tar.bz2
+  unpack glom-1.6.8-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./glom-1.6.7-X.cygport all
+  cygport ./glom-1.6.8-X.cygport all
 
 This will create:
-  /usr/src/glom-1.6.7-X-src.tar.bz2
-  /usr/src/glom-1.6.7-X.tar.bz2
+  /usr/src/glom-1.6.8-X-src.tar.bz2
+  /usr/src/glom-1.6.8-X.tar.bz2
 
 -------------------------------------------
 
@@ -87,13 +87,13 @@ Files included in the binary package:
   /usr/lib/python2.5/site-packages/glom.dll
   /usr/lib/python2.5/site-packages/glom.la
   /usr/share/applications/glom.desktop
-  /usr/share/doc/glom-1.6.7/AUTHORS
-  /usr/share/doc/glom-1.6.7/COPYING
-  /usr/share/doc/glom-1.6.7/ChangeLog
-  /usr/share/doc/glom-1.6.7/INSTALL
-  /usr/share/doc/glom-1.6.7/NEWS
-  /usr/share/doc/glom-1.6.7/README
-  /usr/share/doc/glom-1.6.7/TODO
+  /usr/share/doc/glom-1.6.8/AUTHORS
+  /usr/share/doc/glom-1.6.8/COPYING
+  /usr/share/doc/glom-1.6.8/ChangeLog
+  /usr/share/doc/glom-1.6.8/INSTALL
+  /usr/share/doc/glom-1.6.8/NEWS
+  /usr/share/doc/glom-1.6.8/README
+  /usr/share/doc/glom-1.6.8/TODO
   /usr/share/glom/doc/examples/example_film_manager.glom
   /usr/share/glom/doc/examples/example_music_collection.glom
   /usr/share/glom/doc/examples/example_project_manager.glom
@@ -172,7 +172,7 @@ Files included in the binary package:
 
 Port Notes:
 
------ version 1.6.7-1 -----
+----- version 1.6.8-1 -----
 Version bump.
 
 ----- version 1.6.6-1 -----
