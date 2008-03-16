@@ -15,16 +15,16 @@ functionality.
 Runtime requirements:
   cygwin-1.5.25-7
   bakery24-2.4.4-1
-  gdk-pixbuf2-2.12.5-1
-  glib2-2.14.5-1
+  gdk-pixbuf2-2.12.7-1
+  glib2-2.14.6-1
   glibmm24-2.14.2-1
   gnome-vfsmm26-2.20.0-1
-  gtk2-x11-2.12.5-1
+  gtk2-x11-2.12.7-1
   gtkmm24-2.12.4-1
   iso-codes-1.6-1
   libgda30-3.0.2-1
   libgda30-provider-postgres-3.0.2-1
-  libgdamm30-2.9.81-1
+  libgdamm30-3.0.0-1
   libglademm24-2.6.5-1
   libgnome2-2.20.1.1-1
   libintl8-0.15-1
@@ -39,20 +39,19 @@ Runtime requirements:
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.25-7
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
   binutils-20060817-1
-  cygport-0.3.7-1
+  cygport-0.3.8-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   gnome-common-2.20.0-1
   gnome-doc-utils-0.12.0-1
-  intltool-0.36.4-1
+  intltool-0.36.3-1
   libtool1.5-1.5.23a-2
   make-3.81-1
   pkg-config-0.21-1
-  scrollkeeper-0.3.14-2
+  rarian-0.6.0-1
   sed-4.1.5-2
 
 Canonical website:
@@ -64,15 +63,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack glom-1.6.8-X-src.tar.bz2
+  unpack glom-1.6.9-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./glom-1.6.8-X.cygport all
+  cygport ./glom-1.6.9-X.cygport all
 
 This will create:
-  /usr/src/glom-1.6.8-X-src.tar.bz2
-  /usr/src/glom-1.6.8-X.tar.bz2
+  /usr/src/glom-1.6.9-X-src.tar.bz2
+  /usr/src/glom-1.6.9-X.tar.bz2
 
 -------------------------------------------
 
@@ -87,13 +86,13 @@ Files included in the binary package:
   /usr/lib/python2.5/site-packages/glom.dll
   /usr/lib/python2.5/site-packages/glom.la
   /usr/share/applications/glom.desktop
-  /usr/share/doc/glom-1.6.8/AUTHORS
-  /usr/share/doc/glom-1.6.8/COPYING
-  /usr/share/doc/glom-1.6.8/ChangeLog
-  /usr/share/doc/glom-1.6.8/INSTALL
-  /usr/share/doc/glom-1.6.8/NEWS
-  /usr/share/doc/glom-1.6.8/README
-  /usr/share/doc/glom-1.6.8/TODO
+  /usr/share/doc/glom-1.6.9/AUTHORS
+  /usr/share/doc/glom-1.6.9/COPYING
+  /usr/share/doc/glom-1.6.9/ChangeLog
+  /usr/share/doc/glom-1.6.9/INSTALL
+  /usr/share/doc/glom-1.6.9/NEWS
+  /usr/share/doc/glom-1.6.9/README
+  /usr/share/doc/glom-1.6.9/TODO
   /usr/share/glom/doc/examples/example_film_manager.glom
   /usr/share/glom/doc/examples/example_music_collection.glom
   /usr/share/glom/doc/examples/example_project_manager.glom
@@ -171,6 +170,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.6.9-1 -----
+Version bump.
 
 ----- version 1.6.8-1 -----
 Version bump.
