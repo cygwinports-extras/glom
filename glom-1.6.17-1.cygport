@@ -1,0 +1,12 @@
+inherit gnome2
+
+DESCRIPTION="GNOME database system designer"
+HOMEPAGE="http://www.glom.org/"
+
+DIFF_EXCLUDES="macros"
+
+CYGCONF_ARGS="
+	--enable-client-only
+	--disable-update-mime-database
+	--with-postgres-utils=/usr/sbin
+"
