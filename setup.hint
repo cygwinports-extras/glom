@@ -1,5 +1,5 @@
 category: Gnome Database
-requires: cygwin bakery24 gdk-pixbuf2 glib2 glibmm24 gnome-vfsmm26 gtk2-x11 gtkmm24 iso-codes libgda30 libgda30-provider-postgres libgdamm30 libglademm24 libgnome2 libintl8 libsigc++20 libxml++26 libxml2 libxslt python python-gda python-gobject2 python-gtk2
+requires: cygwin iso-codes libatkmm1.6_1 libbakery2.6_1 libcairo2 libcairomm1.0_1 libgda3.0_3 libgda3.0-provider-postgres libgdamm3.0_10 libgdk_pixbuf2.0_0 libglademm2.4_1 libglib2.0_0 libglibmm2.4_1 libgtk2.0_0 libgtkmm2.4_1 libintl8 libpango1.0_0 libpangomm1.4_1 libsigc2.0_0 libxml++2.6_2 libxml2 libxslt python python-gda python-gobject2 python-gtk2
 sdesc: "GNOME database system designer"
 ldesc: "With Glom you can design database systems - the database and the user
 interface.

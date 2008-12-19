@@ -13,45 +13,48 @@ that it did not create, because it uses only a simple subset of Postgres
 functionality. 
 
 Runtime requirements:
-  cygwin-1.5.25-11
-  bakery24-2.4.4-1
-  gdk-pixbuf2-2.12.9-1
-  glib2-2.14.6-1
-  glibmm24-2.14.2-1
-  gnome-vfsmm26-2.20.0-1
-  gtk2-x11-2.12.9-1
-  gtkmm24-2.12.7-1
+  cygwin-1.5.25-15
   iso-codes-1.6-1
-  libgda30-3.0.4-1
-  libgda30-provider-postgres-3.0.4-1
-  libgdamm30-3.0.0-1
-  libglademm24-2.6.5-1
-  libgnome2-2.20.1.1-1
-  libintl8-0.15-1
-  libsigc++20-2.1.1-1
-  libxml++26-2.20.0-1
-  libxml2-2.6.32-1
-  libxslt-1.1.23-1
-  python-2.5.2-1
-  python-gda-2.19.1-1
-  python-gobject2-2.14.1-1
-  python-gtk2-2.12.1-1
+  libatkmm1.6_1-2.14.3-1
+  libbakery2.6_1-2.6.2-1
+  libcairo2-1.8.4-1
+  libcairomm1.0_1-1.6.4-1
+  libgda3.0_3-3.0.4-2
+  libgda3.0-provider-postgres-3.0.4-1
+  libgdamm3.0_10-3.0.1-2
+  libgdk_pixbuf2.0_0-2.14.5-1
+  libglademm2.4_1-2.6.7-1
+  libglib2.0_0-2.18.3-1
+  libglibmm2.4_1-2.18.1-1
+  libgtk2.0_0-2.14.5-1
+  libgtkmm2.4_1-2.14.3-1
+  libintl8-0.17-2
+  libpango1.0_0-1.22.3-1
+  libpangomm1.4_1-2.14.1-1
+  libsigc2.0_0-2.2.3-1
+  libxml++2.6_2-2.24.0-1
+  libxml2-2.7.2-1
+  libxslt-1.1.24-2
+  python-2.5.2-4
+  python-gda-2.19.1-2
+  python-gobject2-2.15.4-1
+  python-gtk2-2.13.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.61-1
-  automake1.9-1.9.6-2
-  binutils-20060817-1
-  cygport-0.3.10-1
+  autoconf2.5-2.63-1
+  automake1.9-1.9.6-3
+  binutils-20080624-2
+  cygport-0.4.3-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
-  gnome-common-2.20.0-1
-  gnome-doc-utils-0.12.0-1
-  intltool-0.36.3-1
-  libtool-2.2.2-2
+  gnome-common-2.24.0-1
+  gnome-doc-utils-0.14.0-1
+  intltool-0.40.5-1
+  libtool-2.2.6a-1
   make-3.81-1
-  pkg-config-0.21-1
-  rarian-0.6.0-1
+  pkg-config-0.23a-2
+  rarian-0.8.1-1
   sed-4.1.5-2
 
 Canonical website:
@@ -63,22 +66,21 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack glom-1.6.17-X-src.tar.bz2
+  unpack glom-1.8.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./glom-1.6.17-X.cygport all
+  cygport ./glom-1.8.3-X.cygport all
 
 This will create:
-  /usr/src/glom-1.6.17-X-src.tar.bz2
-  /usr/src/glom-1.6.17-X.tar.bz2
+  /usr/src/glom-1.8.3-X-src.tar.bz2
+  /usr/src/glom-1.8.3-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary package:
 
   /etc/postinstall/glom.sh
-  /etc/preremove/glom.sh
   /usr/bin/cygglom-0.dll
   /usr/bin/glom.exe
   /usr/lib/libglom.dll.a
@@ -86,43 +88,137 @@ Files included in the binary package:
   /usr/lib/python2.5/site-packages/glom.dll
   /usr/lib/python2.5/site-packages/glom.la
   /usr/share/applications/glom.desktop
-  /usr/share/doc/glom-1.6.17/AUTHORS
-  /usr/share/doc/glom-1.6.17/COPYING
-  /usr/share/doc/glom-1.6.17/ChangeLog
-  /usr/share/doc/glom-1.6.17/INSTALL
-  /usr/share/doc/glom-1.6.17/NEWS
-  /usr/share/doc/glom-1.6.17/README
-  /usr/share/doc/glom-1.6.17/TODO
+  /usr/share/doc/glom-1.8.3/AUTHORS
+  /usr/share/doc/glom-1.8.3/COPYING
+  /usr/share/doc/glom-1.8.3/ChangeLog
+  /usr/share/doc/glom-1.8.3/INSTALL
+  /usr/share/doc/glom-1.8.3/NEWS
+  /usr/share/doc/glom-1.8.3/README
+  /usr/share/doc/glom-1.8.3/TODO
   /usr/share/glom/doc/examples/example_film_manager.glom
+  /usr/share/glom/doc/examples/example_lesson_planner.glom
   /usr/share/glom/doc/examples/example_music_collection.glom
   /usr/share/glom/doc/examples/example_project_manager.glom
   /usr/share/glom/doc/examples/example_smallbusiness.glom
   /usr/share/glom/glade/glom.glade
+  /usr/share/glom/glade/glom_developer.glade
   /usr/share/glom/glom_document.dtd
+  /usr/share/glom/pixmaps/glom-button.png
+  /usr/share/glom/pixmaps/glom-field.png
+  /usr/share/glom/pixmaps/glom-group.png
+  /usr/share/glom/pixmaps/glom-image.png
+  /usr/share/glom/pixmaps/glom-line-horizontal.png
+  /usr/share/glom/pixmaps/glom-line-vertical.png
+  /usr/share/glom/pixmaps/glom-notebook.png
+  /usr/share/glom/pixmaps/glom-related-records.png
+  /usr/share/glom/pixmaps/glom-text.png
   /usr/share/glom/xslt/print_details_to_html.xsl
   /usr/share/glom/xslt/print_report_to_html.xsl
+  /usr/share/gnome/help/glom/C/figures/glom_data_details.png
+  /usr/share/gnome/help/glom/C/figures/glom_data_list.png
   /usr/share/gnome/help/glom/C/figures/glom_design_fields.png
   /usr/share/gnome/help/glom/C/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_layout_details.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_layout_list.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_reports.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_reports_details.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_reports_group_by.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_reports_vertical_group.png
+  /usr/share/gnome/help/glom/C/figures/glom_design_translations.png
+  /usr/share/gnome/help/glom/C/figures/glom_import.png
+  /usr/share/gnome/help/glom/C/figures/glom_initial_dialog_local_network.png
+  /usr/share/gnome/help/glom/C/figures/glom_report_result.png
+  /usr/share/gnome/help/glom/C/figures/glom_tables.png
   /usr/share/gnome/help/glom/C/figures/start.png
   /usr/share/gnome/help/glom/C/glom.xml
   /usr/share/gnome/help/glom/C/legal.xml
+  /usr/share/gnome/help/glom/de/figures/glom_data_details.png
+  /usr/share/gnome/help/glom/de/figures/glom_data_list.png
   /usr/share/gnome/help/glom/de/figures/glom_design_fields.png
   /usr/share/gnome/help/glom/de/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_layout_details.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_layout_list.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_reports.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_reports_details.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_reports_group_by.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_reports_vertical_group.png
+  /usr/share/gnome/help/glom/de/figures/glom_design_translations.png
+  /usr/share/gnome/help/glom/de/figures/glom_import.png
+  /usr/share/gnome/help/glom/de/figures/glom_initial_dialog_local_network.png
+  /usr/share/gnome/help/glom/de/figures/glom_report_result.png
+  /usr/share/gnome/help/glom/de/figures/glom_tables.png
   /usr/share/gnome/help/glom/de/figures/start.png
   /usr/share/gnome/help/glom/de/glom.xml
   /usr/share/gnome/help/glom/de/legal.xml
+  /usr/share/gnome/help/glom/en_GB/figures/glom_data_details.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_data_list.png
   /usr/share/gnome/help/glom/en_GB/figures/glom_design_fields.png
   /usr/share/gnome/help/glom/en_GB/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_layout_details.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_layout_list.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_reports.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_reports_details.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_reports_group_by.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_reports_vertical_group.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_design_translations.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_import.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_initial_dialog_local_network.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_report_result.png
+  /usr/share/gnome/help/glom/en_GB/figures/glom_tables.png
   /usr/share/gnome/help/glom/en_GB/figures/start.png
   /usr/share/gnome/help/glom/en_GB/glom.xml
   /usr/share/gnome/help/glom/en_GB/legal.xml
+  /usr/share/gnome/help/glom/es/figures/glom_data_details.png
+  /usr/share/gnome/help/glom/es/figures/glom_data_list.png
   /usr/share/gnome/help/glom/es/figures/glom_design_fields.png
   /usr/share/gnome/help/glom/es/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_layout_details.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_layout_list.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_reports.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_reports_details.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_reports_group_by.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_reports_vertical_group.png
+  /usr/share/gnome/help/glom/es/figures/glom_design_translations.png
+  /usr/share/gnome/help/glom/es/figures/glom_import.png
+  /usr/share/gnome/help/glom/es/figures/glom_initial_dialog_local_network.png
+  /usr/share/gnome/help/glom/es/figures/glom_report_result.png
+  /usr/share/gnome/help/glom/es/figures/glom_tables.png
   /usr/share/gnome/help/glom/es/figures/start.png
   /usr/share/gnome/help/glom/es/glom.xml
   /usr/share/gnome/help/glom/es/legal.xml
+  /usr/share/gnome/help/glom/fr/figures/glom_data_details.png
+  /usr/share/gnome/help/glom/fr/figures/glom_data_list.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_fields.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_layout_details.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_layout_list.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_reports.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_reports_details.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_reports_group_by.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_reports_vertical_group.png
+  /usr/share/gnome/help/glom/fr/figures/glom_design_translations.png
+  /usr/share/gnome/help/glom/fr/figures/glom_import.png
+  /usr/share/gnome/help/glom/fr/figures/glom_initial_dialog_local_network.png
+  /usr/share/gnome/help/glom/fr/figures/glom_report_result.png
+  /usr/share/gnome/help/glom/fr/figures/glom_tables.png
+  /usr/share/gnome/help/glom/fr/figures/start.png
+  /usr/share/gnome/help/glom/fr/glom.xml
+  /usr/share/gnome/help/glom/fr/legal.xml
+  /usr/share/gnome/help/glom/sv/figures/glom_data_details.png
+  /usr/share/gnome/help/glom/sv/figures/glom_data_list.png
   /usr/share/gnome/help/glom/sv/figures/glom_design_fields.png
   /usr/share/gnome/help/glom/sv/figures/glom_design_fields_dialog_calculated.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_layout_details.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_layout_list.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_reports.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_reports_details.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_reports_group_by.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_reports_vertical_group.png
+  /usr/share/gnome/help/glom/sv/figures/glom_design_translations.png
+  /usr/share/gnome/help/glom/sv/figures/glom_import.png
+  /usr/share/gnome/help/glom/sv/figures/glom_initial_dialog_local_network.png
+  /usr/share/gnome/help/glom/sv/figures/glom_report_result.png
+  /usr/share/gnome/help/glom/sv/figures/glom_tables.png
   /usr/share/gnome/help/glom/sv/figures/start.png
   /usr/share/gnome/help/glom/sv/glom.xml
   /usr/share/gnome/help/glom/sv/legal.xml
@@ -149,6 +245,7 @@ Files included in the binary package:
   /usr/share/locale/nb/LC_MESSAGES/glom.mo
   /usr/share/locale/ne/LC_MESSAGES/glom.mo
   /usr/share/locale/nl/LC_MESSAGES/glom.mo
+  /usr/share/locale/oc/LC_MESSAGES/glom.mo
   /usr/share/locale/pa/LC_MESSAGES/glom.mo
   /usr/share/locale/pt/LC_MESSAGES/glom.mo
   /usr/share/locale/pt_BR/LC_MESSAGES/glom.mo
@@ -165,11 +262,15 @@ Files included in the binary package:
   /usr/share/omf/glom/glom-de.omf
   /usr/share/omf/glom/glom-en_GB.omf
   /usr/share/omf/glom/glom-es.omf
+  /usr/share/omf/glom/glom-fr.omf
   /usr/share/omf/glom/glom-sv.omf
 
 ------------------
 
 Port Notes:
+
+----- version 1.8.3-1 -----
+Version bump.
 
 ----- version 1.6.17-1 -----
 Version bump.

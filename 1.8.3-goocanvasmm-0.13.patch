@@ -1,0 +1,99 @@
+--- origsrc/glom-1.8.3/glom/utility_widgets/canvas/canvas_group_resizable.cc	2008-11-29 05:10:43.000000000 -0600
++++ src/glom-1.8.3/glom/utility_widgets/canvas/canvas_group_resizable.cc	2008-12-17 16:41:06.431375000 -0600
+@@ -299,7 +299,7 @@
+   set_width_height(width, height);
+ 
+   position_manipulators();
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_INVISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_INVISIBLE);
+ }
+ 
+ Glib::RefPtr<CanvasItemMovable> CanvasGroupResizable::get_child()
+@@ -402,7 +402,7 @@
+ {
+   //Make sure that the manipulator is still visibile.
+   //(if the user moves too fast then we get a leave-notify-event on the manipulator, rect, or item):
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_VISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_VISIBLE);
+ 
+   Glib::RefPtr<CanvasItemMovable> manipulator_base = get_manipulator(manipulator_id);
+   Glib::RefPtr<CanvasRectMovable> manipulator = Glib::RefPtr<CanvasRectMovable>::cast_dynamic(manipulator_base);
+@@ -478,7 +478,7 @@
+ {
+   //Make sure that the manipulator is still visibile.
+   //(if the user moves too fast then we get a leave-notify-event on the manipulator, rect, or item):
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_VISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_VISIBLE);
+ 
+   Glib::RefPtr<CanvasItemMovable> manipulator_base = get_manipulator(manipulator_id);
+   Glib::RefPtr<CanvasRectMovable> manipulator = Glib::RefPtr<CanvasRectMovable>::cast_dynamic(manipulator_base);
+@@ -512,14 +512,14 @@
+ bool CanvasGroupResizable::on_manipulator_enter_notify_event(const Glib::RefPtr<Goocanvas::Item>& /* target */, GdkEventCrossing* /* event */)
+ {
+   m_in_manipulator = true;
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_VISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_VISIBLE);
+   return false;
+ }
+ 
+ bool CanvasGroupResizable::on_manipulator_leave_notify_event(const Glib::RefPtr<Goocanvas::Item>& /* target */, GdkEventCrossing* /* event */t)
+ {
+   m_in_manipulator = false;
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_INVISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_INVISIBLE);
+   return false;
+ }
+ 
+@@ -527,7 +527,7 @@
+ {
+   //Make sure that the manipulator is still visibile.
+   //(if the user moves too fast then we get a leave-notify-event on the manipulator, rect, or item):
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_VISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_VISIBLE);
+ 
+   Glib::RefPtr<CanvasItemMovable> manipulator_base = get_manipulator(manipulator_id);
+   Glib::RefPtr<CanvasLineMovable> manipulator = Glib::RefPtr<CanvasLineMovable>::cast_dynamic(manipulator_base);
+@@ -643,14 +643,14 @@
+   if(!m_group_manipulators)
+     return;
+ 
+-  //For testing: visibility = Goocanvas::CANVAS_ITEM_VISIBLE;
++  //For testing: visibility = Goocanvas::ITEM_VISIBLE;
+ 
+   m_group_manipulators->property_visibility() = visibility;
+ }
+ 
+ bool CanvasGroupResizable::on_rect_enter_notify_event(const Glib::RefPtr<Goocanvas::Item>& target, GdkEventCrossing* event)
+ {
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_VISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_VISIBLE);
+ 
+   return true;
+ }
+@@ -663,7 +663,7 @@
+   //Hide the manipulators if we are outside of the main area,
+   //but not just because we are instead inside the manipulator itself:
+   //Doesn't seem useful: if(!m_in_manipulator && (target_movable == m_child))
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_INVISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_INVISIBLE);
+ 
+ 
+   return false;
+@@ -673,7 +673,7 @@
+ {
+   CanvasItemMovable::on_enter_notify_event(target, event);
+ 
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_VISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_VISIBLE);
+ 
+   return true;
+ }
+@@ -686,7 +686,7 @@
+   //Hide the manipulators if we are outside of the main area,
+   //but not just because we are instead inside the manipulator itself:
+   //Doesn't seem useful: if(!m_in_manipulator && (target_movable == m_child))
+-  set_manipulators_visibility(Goocanvas::CANVAS_ITEM_INVISIBLE);
++  set_manipulators_visibility(Goocanvas::ITEM_INVISIBLE);
+ 
+   return false;
+ }
