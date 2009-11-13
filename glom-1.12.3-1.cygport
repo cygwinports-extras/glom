@@ -1,0 +1,20 @@
+inherit pygtk gnome2
+
+DESCRIPTION="GNOME database system designer"
+HOMEPAGE="http://www.glom.org/"
+
+PATCH_URI="
+	1.12.3-platform-win32.patch
+	1.12.3-libpython.patch
+"
+
+PKG_NAMES="glom libglom1.12_0 libglom1.12-devel python-glom1.12"
+glom_CONTENTS="etc/ usr/bin/glom.exe usr/share/"
+libglom1_12_0_CONTENTS="usr/bin/cygglom-1.12-0.dll"
+libglom1_12_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+python_glom1_12_CONTENTS=${PYTHON_SITELIB#/}
+
+CYGCONF_ARGS="
+	--disable-update-mime-database
+	--with-postgres-utils=/usr/sbin
+"

@@ -1,0 +1,15 @@
+category: Gnome Database
+requires: libgcc1 libgda4.0_4 libgda4.0-provider-postgres libgdamm4.0_12 libglib2.0_0 libglibmm2.4_1 libintl8 libsigc2.0_0 libstdc++6 libxml++2.6_2 python python-gda python-gobject2.0
+external-source: glom
+sdesc: "GNOME database system designer library (runtime)"
+ldesc: "With Glom you can design database systems - the database and the user
+interface.
+
+The design is loosely based on FileMaker Pro, with the added advantage
+of separation between interface and data. Its simple framework should be
+enough to implement most database applications. Without Glom these
+systems normally consist of lots of repetitive, unmaintainable code.
+
+Glom uses the PostgreSQL database backend but it can not edit databases
+that it did not create, because it uses only a simple subset of Postgres
+functionality."
