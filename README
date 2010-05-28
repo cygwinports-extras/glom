@@ -13,54 +13,54 @@ that it did not create, because it uses only a simple subset of Postgres
 functionality. 
 
 Runtime requirements:
-  cygwin-1.7.0-62
+  cygwin-1.7.5-1
   iso-codes-3.11-1
   libatkmm1.6_1-2.18.2-1
-  libcairo2-1.8.8-1
+  libcairo2-1.8.10-1
   libcairomm1.0_1-1.8.4-1
-  libgcc1-4.3.4-1
-  libgda4.0_4-4.0.5-1
-  libgda4.0-provider-postgres-4.0.5-1
-  libgdamm4.0_12-3.99.17-1
+  libgcc1-4.3.4-3
+  libgda4.0_4-4.0.8-1
+  libgda4.0-provider-postgres-4.0.8-1
+  libgda4.0-provider-sqlite-4.0.8-1
+  libgdamm4.0_12-3.99.17.1-1
   libgettextpo0-0.17-11
-  libglib2.0_0-2.22.2-1
+  libglib2.0_0-2.22.4-2
   libglibmm2.4_1-2.22.1-1
   libgoocanvasmm1.0_5-0.15.1-1
-  libgtk2.0_0-2.18.3-1
+  libgtk2.0_0-2.18.6-1
   libgtkmm2.4_1-2.18.2-1
   libgtksourceviewmm2.0_2-2.3.1-1
   libintl8-0.17-11
-  libpango1.0_0-1.26.0-1
+  libpango1.0_0-1.26.2-1
   libpangomm1.4_1-2.26.0-1
-  libsigc2.0_0-2.2.4.2-1
-  libstdc++6-4.3.4-1
+  libsigc2.0_0-2.2.7-1
+  libstdc++6-4.3.4-3
   libxml++2.6_2-2.26.1-1
-  libxml2-2.7.4-1
-  libxslt-1.1.24-10
+  libxml2-2.7.7-1
+  libxslt-1.1.26-1
   postgresql-8.2.11-1
-  python-2.5.4-10
-  python-gda-2.27.0-1
-  python-gobject2.0-2.20.0-1
-  python-gtk2.0-2.16.0-1
+  python-2.6.5-1
+  python-gda-2.27.0-2
+  python-gobject2.0-2.20.0-2
+  python-gtk2.0-2.16.0-2
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-10
-  automake1.11-1.11-10
-  binutils-2.19.51-1
-  cygport-0.9.10-1
+  autoconf2.5-2.65-1
+  automake1.11-1.11.1-1
+  binutils-2.20.51-2
+  cygport-0.9.84-1
   gawk-3.1.7-1
-  gcc4-core-4.3.4-1
-  gcc4-g++-4.3.4-1
+  gcc4-core-4.3.4-3
+  gcc4-g++-4.3.4-3
   gnome-common-2.28.0-1
-  gnome-doc-utils-0.18.0-1
-  intltool-0.40.6-1
-  libtool-2.2.7a-14
+  gnome-doc-utils-0.20.1-1
+  intltool-0.41.1-1
+  libtool-2.2.7a-15
   make-3.81-2
-  mm-common-0.8-1
+  mm-common-0.9.2-1
   pkg-config-0.23b-10
   rarian-0.8.1-12
-  sed-4.1.5-2
 
 Canonical website:
   http://www.glom.org/
@@ -71,22 +71,25 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack glom-1.12.3-X-src.tar.bz2
+  unpack glom-1.12.7-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./glom-1.12.3-X.cygport all
+  cygport ./glom-1.12.7-X.cygport all
 
 This will create:
-  /usr/src/glom-1.12.3-X-src.tar.bz2
-  /usr/src/glom-1.12.3-X.tar.bz2
-  /usr/src/libglom1.12-devel-1.12.3-X.tar.bz2
-  /usr/src/libglom1.12_0-1.12.3-X.tar.bz2
-  /usr/src/python-glom1.12-1.12.3-X.tar.bz2
+  /usr/src/glom-1.12.7-X-src.tar.bz2
+  /usr/src/glom-1.12.7-X.tar.bz2
+  /usr/src/libglom1.12-devel-1.12.7-X.tar.bz2
+  /usr/src/libglom1.12_0-1.12.7-X.tar.bz2
+  /usr/src/python-glom1.12-1.12.7-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 1.12.7-1 -----
+Version bump, built for Python 2.6.
 
 ----- version 1.12.3-1 -----
 Initial release for Cygwin 1.7.
