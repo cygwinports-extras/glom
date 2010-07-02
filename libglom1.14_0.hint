@@ -1,7 +1,7 @@
 category: Gnome Database
-requires: libglom1.12_0 libgda4.0-devel libgdamm4.0-devel libglib2.0-devel libglibmm2.4-devel gettext libsigc2.0-devel libxml++2.6-devel python
+requires: libboost_python1.43 libgcc1 libgda4.0_4 libgda4.0-provider-postgres libgdamm4.0_12 libglib2.0_0 libglibmm2.4_1 libintl8 libsigc2.0_0 libstdc++6 libxml++2.6_2 python python-gda python-gobject2.0
 external-source: glom
-sdesc: "GNOME database system designer library (development)"
+sdesc: "GNOME database system designer library (runtime)"
 ldesc: "With Glom you can design database systems - the database and the user
 interface.
 
