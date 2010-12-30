@@ -1,6 +1,6 @@
---- origsrc/glom-1.14.3/configure.ac	2010-06-19 08:30:35.000000000 -0500
-+++ src/glom-1.14.3/configure.ac	2010-06-30 23:54:31.838154700 -0500
-@@ -70,7 +70,11 @@ AM_GLIB_GNU_GETTEXT
+--- origsrc/glom-1.16.1/configure.ac	2010-10-19 06:07:54.000000000 -0500
++++ src/glom-1.16.1/configure.ac	2010-12-29 21:56:59.107472600 -0600
+@@ -69,7 +69,11 @@ AM_GLIB_GNU_GETTEXT
  AC_DEFINE([GETTEXT_PACKAGE], [PACKAGE_TARNAME], [Define to the gettext package name.])
  
  AC_MSG_CHECKING([whether to enable Windows specific options])
@@ -13,18 +13,18 @@
  AC_MSG_RESULT([$glom_host_win32])
  
  AS_IF([test "x$glom_host_win32" = xyes],
-@@ -148,7 +152,7 @@ AC_ARG_ENABLE([maemo-launcher],
+@@ -147,7 +151,7 @@ AC_ARG_ENABLE([maemo-launcher],
  # libgda >= 4.1.2 is also OK, but not 4.1.<2.
- REQUIRED_LIBGLOM_LIBS='gthread-2.0 giomm-2.4 libxml++-2.6 >= 2.23.1 pygda-4.0 >= 2.25.3 pygobject-2.0 >= 2.6.0 libgdamm-4.0 >= 3.99.18 libgda-4.0 >= 4.0.4 libgda-postgres-4.0'
+ REQUIRED_LIBGLOM_LIBS='gthread-2.0 giomm-2.4 libxml++-2.6 >= 2.23.1 pygda-4.0 >= 2.25.3 pygobject-2.0 >= 2.6.0 libgdamm-4.0 >= 3.99.21 libgda-4.0 >= 4.0.4 libgda-postgres-4.0'
  
 -AS_IF([test "x$glom_host_win32" != xyes],
 +AS_IF([test "x$glom_host_win32" != xyes && test "x$glom_host_cygwin" != xyes],
        [REQUIRED_LIBGLOM_LIBS="$REQUIRED_LIBGLOM_LIBS libepc-1.0 >= 0.3.1"])
  
  # Libraries used by Glom:
---- origsrc/glom-1.14.3/glom/application.cc	2010-06-19 07:57:42.000000000 -0500
-+++ src/glom-1.14.3/glom/application.cc	2010-06-30 23:56:05.650520400 -0500
-@@ -48,10 +48,10 @@
+--- origsrc/glom-1.16.1/glom/application.cc	2010-08-31 04:33:14.000000000 -0500
++++ src/glom-1.16.1/glom/application.cc	2010-12-29 21:56:59.107472600 -0600
+@@ -51,10 +51,10 @@
  #include <hildon-fmmm.h>
  #endif // GLOM_ENABLE_MAEMO
  
@@ -35,9 +35,9 @@
 -#endif // !G_OS_WIN32
 +#endif // !G_PLATFORM_WIN32
  
- #include <gtk/gtk.h>
+ //#include <gtk/gtk.h>
  
-@@ -99,7 +99,7 @@ Application::Application(BaseObjectType*
+@@ -105,7 +105,7 @@ Application::Application(BaseObjectType*
    add_mime_type("application/x-glom"); //TODO: make this actually work - we need to register it properly.
  
  #ifndef GLOM_ENABLE_CLIENT_ONLY
@@ -46,7 +46,7 @@
    //Install UI hooks for this:
    ConnectionPool* connection_pool = ConnectionPool::get_instance();
    if(!connection_pool)
-@@ -698,7 +698,7 @@ void Application::ui_warning_load_failed
+@@ -745,7 +745,7 @@ void Application::ui_warning_load_failed
  }
  
  
@@ -55,7 +55,7 @@
  void Application::open_browsed_document(const EpcServiceInfo* server, const Glib::ustring& service_name)
  {
    gsize length = 0;
-@@ -825,7 +825,7 @@ void Application::open_browsed_document(
+@@ -872,7 +872,7 @@ void Application::open_browsed_document(
      }
    }
  }
@@ -64,7 +64,7 @@
  
  #ifndef GLOM_ENABLE_CLIENT_ONLY
  //Copied from bakery:
-@@ -1412,7 +1412,7 @@ bool Application::offer_new_or_existing(
+@@ -1491,7 +1491,7 @@ bool Application::offer_new_or_existing(
        case Dialog_ExistingOrNew::OPEN_URI:
          open_document(dialog->get_uri());
          break;
@@ -73,9 +73,9 @@
        case Dialog_ExistingOrNew::OPEN_REMOTE:
          open_browsed_document(dialog->get_service_info(), dialog->get_service_name());
          break;
---- origsrc/glom-1.14.3/glom/application.h	2010-06-19 07:57:42.000000000 -0500
-+++ src/glom-1.14.3/glom/application.h	2010-06-30 23:56:29.786900900 -0500
-@@ -186,13 +186,13 @@ private:
+--- origsrc/glom-1.16.1/glom/application.h	2010-08-31 04:26:08.000000000 -0500
++++ src/glom-1.16.1/glom/application.h	2010-12-29 21:56:59.123072600 -0600
+@@ -199,13 +199,13 @@ private:
    void on_connection_avahi_done();
  #endif // !GLOM_ENABLE_CLIENT_ONLY
  
@@ -91,9 +91,9 @@
  
    virtual void document_history_add(const Glib::ustring& file_uri); //overridden.
  
-@@ -200,9 +200,9 @@ private:
- 
-   void on_connection_close_progress();
+@@ -215,9 +215,9 @@ private:
+   void on_connection_save_backup_progress();
+   void on_connection_convert_backup_progress();
  
 -#ifndef G_OS_WIN32
 +#ifndef G_PLATFORM_WIN32
@@ -103,8 +103,8 @@
  
    static Glib::ustring get_file_uri_without_extension(const Glib::ustring& uri);
  
---- origsrc/glom-1.14.3/glom/dialog_existing_or_new.cc	2010-06-19 07:50:50.000000000 -0500
-+++ src/glom-1.14.3/glom/dialog_existing_or_new.cc	2010-06-30 23:58:45.487662600 -0500
+--- origsrc/glom-1.16.1/glom/dialog_existing_or_new.cc	2010-10-19 05:58:27.000000000 -0500
++++ src/glom-1.16.1/glom/dialog_existing_or_new.cc	2010-12-29 21:56:59.123072600 -0600
 @@ -36,7 +36,8 @@
  
  #ifdef G_OS_WIN32
@@ -283,8 +283,8 @@
  
  void Dialog_ExistingOrNew::on_existing_row_activated(const Gtk::TreeModel::Path& /* path */, Gtk::TreeViewColumn* /* column */)
  {
---- origsrc/glom-1.14.3/glom/dialog_existing_or_new.h	2010-05-12 14:38:54.000000000 -0500
-+++ src/glom-1.14.3/glom/dialog_existing_or_new.h	2010-06-30 23:59:28.248108300 -0500
+--- origsrc/glom-1.16.1/glom/dialog_existing_or_new.h	2010-10-19 05:58:27.000000000 -0500
++++ src/glom-1.16.1/glom/dialog_existing_or_new.h	2010-12-29 21:56:59.138672600 -0600
 @@ -35,7 +35,7 @@
  #include <gtkmm/notebook.h>
  #include <gtkmm/builder.h>
@@ -355,9 +355,9 @@
    EpcServiceMonitor* m_service_monitor;
  #endif
  
---- origsrc/glom-1.14.3/glom/frame_glom.cc	2010-06-19 07:50:51.000000000 -0500
-+++ src/glom-1.14.3/glom/frame_glom.cc	2010-07-01 00:00:40.612247300 -0500
-@@ -1185,7 +1185,7 @@ void Frame_Glom::on_menu_Mode_Find()
+--- origsrc/glom-1.16.1/glom/frame_glom.cc	2010-08-31 04:33:14.000000000 -0500
++++ src/glom-1.16.1/glom/frame_glom.cc	2010-12-29 21:56:59.138672600 -0600
+@@ -1197,7 +1197,7 @@ void Frame_Glom::on_menu_Mode_Toggle()
      m_Notebook_Find.set_current_view(list_or_details);
    }
  
@@ -366,8 +366,8 @@
    Gtk::Window* parent = get_app_window();
    g_assert(parent);
    if(parent)
---- origsrc/glom-1.14.3/glom/libglom/connectionpool.cc	2010-06-19 07:26:37.000000000 -0500
-+++ src/glom-1.14.3/glom/libglom/connectionpool.cc	2010-07-01 00:01:55.598536300 -0500
+--- origsrc/glom-1.16.1/glom/libglom/connectionpool.cc	2010-10-19 05:58:27.000000000 -0500
++++ src/glom-1.16.1/glom/libglom/connectionpool.cc	2010-12-29 21:56:59.154272600 -0600
 @@ -31,7 +31,8 @@
  
  #ifdef G_OS_WIN32
@@ -378,8 +378,8 @@
  # include <libepc/shell.h> //For epc_shell_set_progress_hooks().
  # include <libepc/publisher.h>
  #endif
-@@ -41,7 +42,7 @@
- #include <glibmm/i18n.h>
+@@ -43,7 +44,7 @@
+ #include <iostream>
  
  
 -#ifndef G_OS_WIN32
@@ -387,7 +387,7 @@
  static EpcProtocol publish_protocol = EPC_PROTOCOL_HTTPS;
  #endif
  
-@@ -356,7 +357,7 @@ sharedptr<SharedConnection> ConnectionPo
+@@ -359,7 +360,7 @@ sharedptr<SharedConnection> ConnectionPo
          if(!m_pFieldTypes)
            m_pFieldTypes = new FieldTypes(m_refGdaConnection);
  
@@ -396,7 +396,7 @@
          //Let other clients discover this server via avahi:
          //TODO: Only advertize if we are the first to open the document,
          //to avoid duplicates.
-@@ -365,7 +366,7 @@ sharedptr<SharedConnection> ConnectionPo
+@@ -368,7 +369,7 @@ sharedptr<SharedConnection> ConnectionPo
          Document* document = get_document();
          if(document && document->get_network_shared())
            avahi_start_publishing(); //Stopped in the signal_finished handler.
@@ -405,7 +405,7 @@
  
  #ifdef GLIBMM_EXCEPTIONS_ENABLED
          return connect(); //Call this method recursively. This time m_refGdaConnection exists.
-@@ -489,7 +490,7 @@ void ConnectionPool::on_sharedconnection
+@@ -546,7 +547,7 @@ void ConnectionPool::on_sharedconnection
  
      m_refGdaConnection.reset();
  
@@ -414,9 +414,9 @@
      //TODO: this should only even be started if we are the first to open the .glom file:
      avahi_stop_publishing();
  #endif
-@@ -576,10 +577,10 @@ bool ConnectionPool::startup(const SlotP
-   if(!m_backend->startup(slot_progress, network_shared))
-     return false;
+@@ -634,10 +635,10 @@ ConnectionPool::StartupErrors Connection
+   if(started != Backend::STARTUPERROR_NONE)
+     return started;
  
 -#ifndef G_OS_WIN32
 +#ifndef G_PLATFORM_WIN32
@@ -427,7 +427,7 @@
  
    //If we crash while running (unlikely, hopefully), then try to cleanup.
    //Comment this out if you want to see the backtrace in a debugger.
-@@ -608,10 +609,10 @@ bool ConnectionPool::cleanup(const SlotP
+@@ -666,10 +667,10 @@ bool ConnectionPool::cleanup(const SlotP
    invalidate_connection();
  
  
@@ -440,7 +440,7 @@
  
    //We don't need the segfault handler anymore:
    signal(SIGSEGV, previous_sig_handler);
-@@ -779,7 +780,7 @@ Document* ConnectionPool::get_document()
+@@ -837,7 +838,7 @@ Document* ConnectionPool::get_document()
    return m_slot_get_document();
  }
  
@@ -449,7 +449,7 @@
  //static
  EpcContents* ConnectionPool::on_publisher_document_requested(EpcPublisher* /* publisher */, const gchar* /* key */, gpointer user_data)
  {
-@@ -935,13 +936,13 @@ void ConnectionPool::avahi_stop_publishi
+@@ -993,13 +994,13 @@ void ConnectionPool::avahi_stop_publishi
    std::cout << "debug: ConnectionPool::avahi_stop_publishing" << std::endl;
  #endif
  
@@ -466,19 +466,19 @@
  
  void ConnectionPool::set_get_document_func(const SlotGetDocument& slot)
  {
---- origsrc/glom-1.14.3/glom/libglom/connectionpool.h	2010-06-19 07:26:37.000000000 -0500
-+++ src/glom-1.14.3/glom/libglom/connectionpool.h	2010-07-01 00:02:50.791693200 -0500
+--- origsrc/glom-1.16.1/glom/libglom/connectionpool.h	2010-08-31 04:33:14.000000000 -0500
++++ src/glom-1.16.1/glom/libglom/connectionpool.h	2010-12-29 21:57:54.362768900 -0600
 @@ -109,7 +109,7 @@ public:
-   
+ 
    typedef sigc::slot<void> type_void_slot;
-   
+ 
 -#ifndef G_OS_WIN32
 +#ifndef G_PLATFORM_WIN32
-   /** Set callbacks that will be called to show UI while starting to advertise 
+   /** Set callbacks that will be called to show UI while starting to advertise
     * on the network via Avahi.
     *
-@@ -246,14 +246,14 @@ public:
-   typedef sigc::slot<Document*> SlotGetDocument; 
+@@ -267,14 +267,14 @@ public:
+   typedef sigc::slot<Document*> SlotGetDocument;
    void set_get_document_func(const SlotGetDocument& slot);
  
 -#ifndef G_OS_WIN32
@@ -492,9 +492,9 @@
 -#endif // !G_OS_WIN32
 +#endif // !G_PLATFORM_WIN32
  
-   //Show the gda error in a dialog.
-   static bool handle_error_cerr_only();
-@@ -273,12 +273,12 @@ private:
+   //TODO: Document
+   void set_show_debug_output(bool val);
+@@ -298,12 +298,12 @@ private:
  
    Document* get_document();
  
@@ -509,9 +509,9 @@
  
  private:
  
---- origsrc/glom-1.14.3/glom/main.cc	2010-06-19 07:26:37.000000000 -0500
-+++ src/glom-1.14.3/glom/main.cc	2010-07-01 00:05:08.196552300 -0500
-@@ -363,18 +363,19 @@ bool check_pygda_is_available_with_warni
+--- origsrc/glom-1.16.1/glom/main.cc	2010-09-17 07:51:45.000000000 -0500
++++ src/glom-1.16.1/glom/main.cc	2010-12-29 21:59:32.453739100 -0600
+@@ -371,18 +371,18 @@ bool check_pygda_is_available_with_warni
  
  } //namespace Glom
  
@@ -520,7 +520,7 @@
  extern "C" void __libc_freeres(void);
  #endif
  
- int 
+ int
  main(int argc, char* argv[])
  {
 -#ifndef G_OS_WIN32
@@ -529,13 +529,12 @@
    //to help valgrind to detect memory leaks:
    atexit(__libc_freeres);
 -#else
-+#endif
-+#ifdef G_OS_WIN32
++#elif defined(G_OS_WIN32)
    WSADATA data;
    int errcode = WSAStartup(MAKEWORD(2, 0), &data);
    if(errcode != 0)
---- origsrc/glom-1.14.3/tests/test_python_module.cc	2010-02-01 09:01:04.000000000 -0600
-+++ src/glom-1.14.3/tests/test_python_module.cc	2010-07-01 00:05:42.509514900 -0500
+--- origsrc/glom-1.16.1/tests/test_python_module.cc	2010-08-31 04:26:08.000000000 -0500
++++ src/glom-1.16.1/tests/test_python_module.cc	2010-12-29 21:56:59.169872700 -0600
 @@ -5,7 +5,7 @@
  #include "config.h"
  #include "glom/python_embed/glom_python.h"
