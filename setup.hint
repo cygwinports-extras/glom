@@ -1,5 +1,5 @@
 category: Gnome Database
-requires: evince libatkmm1.6_1 libboost_python1.46.1 libcairo2 libcairomm1.0_1 libepc1.0_3 libgcc1 libgda5.0_4 libgdamm5.0_13 libgettextpo0 libglib2.0_0 libglibmm2.4_1 libgoocanvasmm2.0_6 libgtk3_0 libgtkmm3.0_1 libgtksourceviewmm3.0_0 libintl8 libpango1.0_0 libpangomm1.4_1 libsigc2.0_0 libstdc++6 libxml++2.6_2 libxml2 libxslt postgresql python python-gi girepository-Gda5.0
+requires: evince libatkmm1.6_1 libboost_python1.48 libcairo2 libcairomm1.0_1 libepc1.0_3 libgcc1 libgda5.0_4 libgdamm5.0_13 libgettextpo0 libglib2.0_0 libglibmm2.4_1 libgoocanvasmm2.0_6 libgtk3_0 libgtkmm3.0_1 libgtksourceviewmm3.0_0 libintl8 libpango1.0_0 libpangomm1.4_1 libsigc2.0_0 libstdc++6 libxml++2.6_2 libxml2 libxslt postgresql python python-gi girepository-Gda5.0
 sdesc: "GNOME database system designer"
 ldesc: "With Glom you can design database systems - the database and the user
 interface.

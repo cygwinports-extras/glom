@@ -16,3 +16,5 @@ CYGCONF_ARGS="
 	--with-postgres-utils=/usr/sbin
 	--enable-sqlite
 "
+
+KEEP_LA_FILES="none"
