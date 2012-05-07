@@ -3,10 +3,7 @@ inherit pygtk gnome2
 DESCRIPTION="GNOME database system designer"
 HOMEPAGE="http://www.glom.org/"
 
-PATCH_URI="
-	1.12.3-libpython.patch
-	1.20.2-glade.patch
-"
+PATCH_URI="1.12.3-libpython.patch"
 
 DIFF_EXCLUDES="libglom_config.h"
 
