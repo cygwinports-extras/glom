@@ -1,16 +1,15 @@
 inherit pygtk gnome2
 
 NAME="glom"
-VERSION=1.22.1
+VERSION=1.24.1
 RELEASE=1
-CATEGORY="GNOME Database"
+CATEGORY="Database"
 SUMMARY="GNOME database system designer"
 DESCRIPTION="With Glom you can design database systems - the database and the
 user interface.  The design is loosely based on FileMaker Pro, with the added
 advantage of separation between interface and data. Its simple framework should
 be enough to implement most database applications. Without Glom these systems
 normally consist of lots of repetitive, unmaintainable code."
-
 HOMEPAGE="http://www.glom.org/"
 
 PATCH_URI="1.12.3-libpython.patch"
