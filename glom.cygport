@@ -2,7 +2,7 @@ inherit pygtk gnome2
 
 NAME="glom"
 VERSION=1.24.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Database"
 SUMMARY="GNOME database system designer"
 DESCRIPTION="With Glom you can design database systems - the database and the
@@ -12,7 +12,10 @@ be enough to implement most database applications. Without Glom these systems
 normally consist of lots of repetitive, unmaintainable code."
 HOMEPAGE="http://www.glom.org/"
 
-PATCH_URI="1.12.3-libpython.patch"
+PATCH_URI="
+	1.12.3-libpython.patch
+	1.24.3-glib-gettext.patch
+"
 
 PKG_NAMES="${NAME} ${NAME}-devel"
 glom_REQUIRES="python-gi girepository-Gda5.0 postgresql"
@@ -25,7 +28,6 @@ DIFF_EXCLUDES="libglom_config.h"
 
 CYGCONF_ARGS="
 	--disable-update-mime-database
-	--with-boost-python=boost_python-mt
 	--with-postgres-utils=/usr/sbin
 	--enable-sqlite
 "
