@@ -1,8 +1,8 @@
 inherit pygtk gnome2
 
 NAME="glom"
-VERSION=1.24.3
-RELEASE=2
+VERSION=1.28.4
+RELEASE=1
 CATEGORY="Database"
 SUMMARY="GNOME database system designer"
 DESCRIPTION="With Glom you can design database systems - the database and the
@@ -13,13 +13,12 @@ normally consist of lots of repetitive, unmaintainable code."
 HOMEPAGE="http://www.glom.org/"
 
 PATCH_URI="
-	1.12.3-libpython.patch
 	1.24.3-glib-gettext.patch
 "
 
 PKG_NAMES="${NAME} ${NAME}-devel"
 glom_REQUIRES="python-gi girepository-Gda5.0 postgresql"
-glom_CONTENTS="--exclude=devhelp --exclude=libglom-${PV[1]}.${PV[2]}
+glom_CONTENTS="--exclude=devhelp --exclude=usr/share/doc/libglom-*
                etc/ usr/bin/ ${PYTHON_SITELIB#/} usr/share/"
 glom_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/
                      usr/share/devhelp/ usr/share/doc/libglom*/"
