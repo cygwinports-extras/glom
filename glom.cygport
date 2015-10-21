@@ -1,7 +1,7 @@
 inherit pygtk gnome2
 
 NAME="glom"
-VERSION=1.28.4
+VERSION=1.28.5
 RELEASE=1
 CATEGORY="Database"
 SUMMARY="GNOME database system designer"
